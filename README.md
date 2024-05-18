@@ -14,3 +14,5 @@
 
 # 수정 시작하기
 이 문서를 수정하려면, 일단 아래의 내용이 숙지되어있어야 합니다
+
+https://github.com/GRAPE-SEC/grape_golden_rule/tree/main
