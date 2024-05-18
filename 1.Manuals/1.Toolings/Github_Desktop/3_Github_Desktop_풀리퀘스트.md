@@ -127,27 +127,67 @@ github 웹페이지에서 하는 방법은 아래와 같다.
 ![alt text](<images/2_pull_request/image copy 55.png>) 
 ![alt text](<images/2_pull_request/image copy 56.png>)
 
+멀로 해도 사실 상관없다.
 
+Pull Request 를 Open 할때는 메세지를 적는다.
+뭐 내가 무슨 기능을 만들었고 합쳐달라 이런거임 ㅇㅇ 
+여기서 Open 은 약간 커뮤니티에 글을 올린다. 공론화한다 이런 뜻이다.
 ![alt text](<images/2_pull_request/image copy 57.png>) 
-![alt text](<images/2_pull_request/image copy 58.png>) 
-![alt text](<images/2_pull_request/image copy 59.png>) 
-![alt text](<images/2_pull_request/image copy 60.png>) 
-![alt text](<images/2_pull_request/image copy 61.png>) 
-![alt text](<images/2_pull_request/image copy 62.png>) 
-![alt text](<images/2_pull_request/image copy 63.png>) 
+
+Pull Request 가 Open 되고 나면 같이 코딩하는 팀원들이 이것을 보고 댓글로 토론을 하면서 이걸 합칠지 말지 논의한다음 합친다.
+
+논의했다 치고 합쳐보자. 브랜치의 Pull Request 를 승인하여 코드를 합치는 것을 병합(Merge) 이라고 한다. 한국에서는 대충 머지한다고 한다.
+![alt text](<images/2_pull_request/image copy 58.png>)
+
+merge 를 승인(confirm) 하면 합쳐진다.
+![alt text](<images/2_pull_request/image copy 59.png>)
+
+merge 되고나면 branch 는 그냥 둘수도 있고, 삭제할 수 도 있다. 이건 협업 규칙에 따라 다름. 안지우고 둬도 되고 없애버려도 된다. 
+![alt text](<images/2_pull_request/image copy 60.png>)
+
+이제 main branch 와 add_title branch 는 merge 되었으므로, main 으로 switch 해보면 add_title 의 내용이 추가되어있다.
+![alt text](<images/2_pull_request/image copy 61.png>)
+![alt text](<images/2_pull_request/image copy 62.png>)
+![alt text](<images/2_pull_request/image copy 63.png>)
+
+# 코드 충돌 해결 (Resolve Conflict)
+
+이제, 100까지 세는 기능을 코딩하는 팀원이 새로운 Pull Request 를 했다쳐보자.
 ![alt text](<images/2_pull_request/image copy 64.png>) 
 ![alt text](<images/2_pull_request/image copy 65.png>) 
 ![alt text](<images/2_pull_request/image copy 66.png>) 
-![alt text](<images/2_pull_request/image copy 67.png>) 
-![alt text](<images/2_pull_request/image copy 68.png>) 
+![alt text](<images/2_pull_request/image copy 67.png>)
+
+그러면 전과 달리, merge 를 confirm 할 수 없고 Conflict 를 Resolve 하라고 뜬다.
+
+이런 상황을 코드 충돌(Conflict)라고 하는데, 쉽게 말하면 서로 겹치는 부분을 수정해서 어떻게 merge 해야할지 git 이 사람에게 수정을 요청하는 것이다.
+
+충돌을 해결하는 것을 resolve 라고 한다. resolve 하고 나면 merge 할 수 있게 된다.
+
+아래 버튼을 클릭하면 Resolve Conflict 를 수행할 수 있다.
+![alt text](<images/2_pull_request/image copy 68.png>)
+
+잘 보면, print("백까지 셌습니다") 와, print("####프로그램 끝###") 이 코드의 같은 줄을 수정했기 때문에 충돌(Conflict)가 발생했다.
+github 에서 자동으로 <<<<브랜치명 으로 어떤 브랜치에서 온 코드인지 알려주는 문장을 삽입해준다.
+
+<<<<브랜치명으로 된 부분은 그냥 지워버리고 "백까지 셌습니다" 다음에 "####프로그램 끝###" 이 오도록 수정하여 충돌을 해결(resolve)한다.
+
 ![alt text](<images/2_pull_request/image copy 69.png>) 
 ![alt text](<images/2_pull_request/image copy 70.png>) 
+
+그러면 이제 merge 가능한 상태로 변한다.
 ![alt text](<images/2_pull_request/image copy 71.png>) 
 ![alt text](<images/2_pull_request/image copy 72.png>) 
-![alt text](<images/2_pull_request/image copy 73.png>) 
+![alt text](<images/2_pull_request/image copy 73.png>)
+
+이제 두개의 branch 가 pull request 로 merge 된 완성된 프로그램을 두 사람이 github 를 통해 협업하여 개발하게 되었다.
 ![alt text](<images/2_pull_request/image copy 74.png>) 
 ![alt text](<images/2_pull_request/image copy 75.png>) 
 ![alt text](<images/2_pull_request/image copy 76.png>) 
 ![alt text](<images/2_pull_request/image copy 77.png>) 
 ![alt text](<images/2_pull_request/image copy 78.png>) 
 ![alt text](<images/2_pull_request/image copy 79.png>)
+
+conflict 를 resolve 하는 기능이 있긴 하지만, 같은 파일을 수정안하면 conflict 가 안생긴다. 그러면 resolve 없이 merge 할 수 있어서 편하니, 협업 할때, 카카오톡/slack/discord 등으로 잘 조율해가지고 최대한 conflict 를 피하는게 좋다. 귀찮잖아
+
+끝~
