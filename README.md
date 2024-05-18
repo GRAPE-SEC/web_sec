@@ -13,10 +13,4 @@
 
 
 # 수정 시작하기
-이 문서를 수정하려면, 일단 아래의 내용이 숙지되어있어야 합니다.
-
-[1) 글 다운로드 받고, 글 업로드하는 방법](1.Manuals/1.Toolings/Github_Desktop/1_Github_Desktop_설치.md)
-
-[2) 글 쓰는 방법](1.Manuals/1.Toolings/vscode_markdown_editor/1_vscode_markdown_editor_설치.md)
-
-[3) GUI 캡쳐하는 방법](1.Manuals/1.Toolings/Lightshot/1-lightshot_설치_및_사용법.md)
+이 문서를 수정하려면, 일단 아래의 내용이 숙지되어있어야 합니다
