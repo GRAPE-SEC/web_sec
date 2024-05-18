@@ -83,22 +83,86 @@ Open in Visual Studio Code 를 누르면 vscode 로 열 수 있다.
 
 클릭하면 vscode 로 열린다. 이제 이 코드들은 git 에 추적된다.
 ![alt text](<images/1_commit_push_discard/image copy 8.png>)
+
+이제 대충 코딩을 해본다. 그냥 바보라고 출력하고 0~10을 출력하는 코드임
 ![alt text](<images/1_commit_push_discard/image copy 9.png>) 
+
+코드를 수정한다음 github desktop 앱을 켜보면 수정사항이 뜬다
 ![alt text](<images/1_commit_push_discard/image copy 10.png>) 
+
+커밋메세지를 작성해보자.
 ![alt text](<images/1_commit_push_discard/image copy 11.png>) 
+
+아래 커밋메세지를 적는 란에 커밋메세지와 설명을 적으면 된다. 설명(Description) 은 선택사항이라 적어도 되고 안적어도 된다
 ![alt text](<images/1_commit_push_discard/image copy 12.png>) 
+
+이제 계속 코딩을 해보자. 코딩을 하다보니까 숫자: 이렇게 숫자 앞에 표시하면 좋을 것 같다.
 ![alt text](<images/1_commit_push_discard/image copy 13.png>) 
-![alt text](<images/1_commit_push_discard/image copy 14.png>) 
-![alt text](<images/1_commit_push_discard/image copy 15.png>) 
+
+이제 다시 github desktop 을 보면 해당 사항이 수정된 것이 보인다.
+![alt text](<images/1_commit_push_discard/image copy 14.png>)
+
+만일 이 수정을 되돌리고 싶으면 해당 수정을 discard 하면 된다.
+(Ctrl+Z 와 같다)
+
+우클릭한 후 Discard changes 를 누르면 취소된다.
 ![alt text](<images/1_commit_push_discard/image copy 16.png>) 
-![alt text](<images/1_commit_push_discard/image copy 17.png>) 
-![alt text](<images/1_commit_push_discard/image copy 19.png>) 
+
+그러면 실제 코드도 다시 수정하기 전으로 돌아온다.
+![alt text](<images/1_commit_push_discard/image copy 17.png>)
+
+History 를 누르면 커밋 메세지 목록을 볼 수 있다.
+Push 버튼을 누르면 remote 인 github 로 코드를 업로드한다.
+![alt text](<images/1_commit_push_discard/image copy 16-1.png>) 
+
+Push Origin 을 누르고, github 에 들어가서 확인해보면 코드가 올라가있다.![alt text](image.png)
 ![alt text](<images/1_commit_push_discard/image copy 20.png>) 
 ![alt text](<images/1_commit_push_discard/image copy 21.png>) 
+
+github 웹브라우저에서도 코드를 커밋할 수 있다. 연필 모양 버튼을 눌러서 수정해보자
 ![alt text](<images/1_commit_push_discard/image copy 22.png>) 
-![alt text](<images/1_commit_push_discard/image copy 23.png>) 
+
+수정다음 커밋을 누른다.
+![alt text](<images/1_commit_push_discard/image copy 23.png>)
+
 ![alt text](<images/1_commit_push_discard/image copy 24.png>) 
+
+그러면 커밋 메세지를 작성할 수 있는 창이 뜸
 ![alt text](<images/1_commit_push_discard/image copy 25.png>) 
+
+이제 다시 github desktop 앱을 열고,
 ![alt text](<images/1_commit_push_discard/image copy 26.png>) 
+
+Fetch 버튼을 누르면 Pull 로 바뀐다. 수정사항이 있다는 뜻이다.
+Pull 을 누르면 코드가 다운로드된다.
 ![alt text](<images/1_commit_push_discard/image copy 27.png>) 
+
+vscode 에서도 변경된 코드를 확인할 수 있다.
 ![alt text](<images/1_commit_push_discard/image copy 28.png>)
+
+## Discard, Undo, Revert 
+discard, undo, revert 는 다 과거로 되돌리는 Ctrl Z 기능인데 약간 구분이 있다.
+- discard 는 "커밋하기 전"에 수정사항을 수정한적이 없다고 없애버리는 기능이다. 되돌리기도 안된다. 그냥 없는 일로 하는 기능임. 커밋한 이후에는 discard 할 수 없다
+
+- undo 는 "커밋"을 통채로 없애버리는 것이다. 그냥 없던 일이 되어서 복구가 안된다.
+
+- revert 는 "커밋을 취소했다" 고 커밋하는 것이다. 그러면 취소한 커밋도 기록된다.
+
+아얘 없던 일로 해버리면, 나중에 또 그 부분을 쓰려고 할 때 곤란해진다. (근데 코딩할때는 이런일이 꽤 자주 일어난다.)
+
+그림 그리다가 망쳤다고 지우개로 박박 지워버리면, 나중에 아무리 그려도 그 그림이 제일 나았었으면 돌이킬 수 없다. revert 는 전부 기록해두기 때문에 나중에 다시 돌아갈 수 있다.
+
+코드 앞에 인사말을 출력하는 코드를 추가해보자.
+![alt text](<images/1_commit_push_discard/image copy 29.png>)
+
+github desktop 에 가보면 수정사항이 기록되어있다. 커밋 메세지를 작성하고 커밋한다
+![alt text](<images/1_commit_push_discard/image copy 30.png>)
+
+그런데 인사하는 부분이 굳이 필요 없을 것 같다. 되돌리고 싶다. 그러면 revert 하면 된다.
+History 탭에 들어가서, 커밋에 우클릭 한 후, Revert changes in commit 을 클릭한다.
+
+![alt text](<images/1_commit_push_discard/image copy 32.png>)
+
+그러면 코드가 전으로 돌아간다.
+![alt text](<images/1_commit_push_discard/image copy 31.png>)
+
