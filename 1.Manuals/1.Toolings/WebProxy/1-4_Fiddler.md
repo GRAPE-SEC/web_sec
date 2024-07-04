@@ -22,3 +22,10 @@
   - Disable : 패킷을 캡쳐하지 않고 그냥 기록만
 
 ![](images/3_fiddler/1_fiddler-breakpoint-menu.png)
+
+
+#### Filter 걸기
+Filter 를 설정하지 않으면 모든 트래픽이 기록되어 불편함.
+관심을 가질 호스트만 URL 을 입력하여 필터링하기
+
+![](images\3_fiddler\2_fiddler-filter.png)
